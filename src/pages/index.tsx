@@ -34,6 +34,7 @@ const Tables = () => {
         onRetry={refetch}
       />
     );
+
   if (loading) return <Loading />;
 
   return (

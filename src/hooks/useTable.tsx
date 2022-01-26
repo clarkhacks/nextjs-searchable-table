@@ -29,11 +29,18 @@ export const useTable = ({
   table,
   thClassName = TH_CLASSNAME,
   tdClassName = TD_CLASNAME,
-}: Props) =>
+}: Props): {
+  cells: CellValues;
+  rows: Rows;
+  getFilteredRows: (search: string) => Rows;
+} =>
   useMemo(() => {
+    // Necesary to know how to display first column values.
     const hasTwoHeaders: boolean = !!table.row_captions;
+    // Create a string out of each row to speed up text search.
     const rowTextSearch: string[] = [];
 
+    // cells hold all of the keys and values in a matrix format.
     const cells: CellValues = [];
     for (let row = 0; row < table.n_rows; row++) {
       cells[row] = [];
@@ -51,14 +58,13 @@ export const useTable = ({
         }
       }
 
-      // Pre-format text search.
       rowTextSearch[row] = cells[row].reduce(
         (str, [_, value]) => str + value.toUpperCase(),
         ""
       );
     }
 
-    // https://www.w3.org/WAI/tutorials/tables/
+    // rows contain the created HTML elements.
     const rows: Rows = [];
     for (let row = 0; row < table.n_rows; row++) {
       rows[row] = [];
