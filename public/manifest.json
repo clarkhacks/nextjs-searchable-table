@@ -1,0 +1,23 @@
+{
+  "name": "Parsel",
+  "short_name": "Parsel",
+  "description": "Next.js Parsel Project",
+  "icons": [
+    {
+      "src": "/192x192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/512x512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#FFFFFF",
+  "background_color": "#FFFFFF",
+  "start_url": "/",
+  "display": "standalone"
+}
