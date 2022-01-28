@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Rows, useTable } from "../hooks/useTable";
 
 import { Table as ITable } from "../pages/api/tables";

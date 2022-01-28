@@ -1,6 +1,6 @@
 export type ErrorProps = {
   error: React.ReactNode;
-  onRetry: () => void;
+  onRetry?: () => void;
 };
 
 export const Error = ({ error, onRetry }: ErrorProps) => (

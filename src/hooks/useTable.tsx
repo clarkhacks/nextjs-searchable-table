@@ -19,6 +19,9 @@ const prependZero = (v: number) => (v < 10 ? `0${v}` : v);
 const getCellKey = (row: number, col: number) =>
   `(${prependZero(row)}, ${prependZero(col)})`;
 
+// One Header, Two Headers, Irregular Headers, Multi-level Headers
+// https://www.w3.org/WAI/tutorials/tables/
+
 export type Props = {
   table: ITable;
   thClassName?: string;
@@ -64,7 +67,7 @@ export const useTable = ({
       );
     }
 
-    // rows contain the created HTML elements.
+    // rows hold all of the td/th HTML elements in a matrix format.
     const rows: Rows = [];
     for (let row = 0; row < table.n_rows; row++) {
       rows[row] = [];
