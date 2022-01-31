@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Rows, useTable } from "../hooks/useTable";
 
 import { Table as ITable } from "../pages/api/tables";
+
+import { Rows, useTable } from "../hooks/useTable";
 
 export type TableProps = { className?: string; table: ITable };
 
